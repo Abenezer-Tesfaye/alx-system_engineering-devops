@@ -1,5 +1,5 @@
-# Using exec to kill a process named killmenow
-exec {'kill-killmenow':
-  command => 'pkill killmenow',
-  path    => '/usr/bin';
+# kills a process called `killmenow`
+
+exec {'pkill -f killmenow':
+  path => '/usr/bin/:/usr/local/bin/:/bin/'
 }
